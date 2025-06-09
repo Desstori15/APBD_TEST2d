@@ -1,0 +1,21 @@
+# Build results
+bin/
+obj/
+
+# Rider / VS Code / Visual Studio config
+.idea/
+.vscode/
+*.user
+*.suo
+
+# System files
+.DS_Store
+
+# Logs
+*.log
+
+# DB
+*.db
+
+# Others
+.env
