@@ -50,7 +50,7 @@ public class PlayerRepository : IPlayerRepository
 
     public async Task<string?> AddPlayerWithMatchesAsync(AddPlayerRequestDto dto)
     {
-        // Проверка матчей
+        // checking matchs
         foreach (var matchDto in dto.Matches)
         {
             var exists = await _context.Matches.AnyAsync(m => m.MatchId == matchDto.MatchId);
@@ -65,7 +65,7 @@ public class PlayerRepository : IPlayerRepository
         };
 
         await _context.Players.AddAsync(player);
-        await _context.SaveChangesAsync(); // Сохраняем для получения PlayerId
+        await _context.SaveChangesAsync(); 
 
         foreach (var matchDto in dto.Matches)
         {
